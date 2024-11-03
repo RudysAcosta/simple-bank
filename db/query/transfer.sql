@@ -33,11 +33,11 @@ LIMIT $2
 OFFSET $3;
 
 -- name: TotalAmountSentByAccount :one
-SELECT COALESCE(SUM(amount), 0) AS total_sent
+SELECT COALESCE(SUM(amount)::BIGINT, 0) AS total_sent
 FROM transfers
 WHERE from_account_id = $1;
 
 -- name: TotalAmountReceivedByAccount :one
-SELECT COALESCE(SUM(amount), 0) AS total_received
+SELECT COALESCE(SUM(amount)::BIGINT, 0) AS total_received
 FROM transfers
 WHERE to_account_id = $1;
