@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	dbSource = "postgresql://admin:admin123@localhost:5432/simple_bank?sslmode=disable"
+	dbSource = "postgresql://admin:secret@localhost:5432/simple_bank?sslmode=disable"
 )
 
 var testQueries *Queries
